@@ -1874,10 +1874,6 @@ void initelliptic_curve(void) 		{
 #ifdef BENCHMARK_ENABLED
     if(import_benchmark() < 0)
         CLEAN_EXIT;
-    if(PyType_Ready(&BenchmarkType) < 0)
-        CLEAN_EXIT;
-    if(PyType_Ready(&OperationsType) < 0)
-    	CLEAN_EXIT;
 #endif
 
 #if PY_MAJOR_VERSION >= 3

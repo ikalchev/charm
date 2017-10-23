@@ -66,7 +66,7 @@ static Benchmark *tmpBench;
 	  return Py_NotImplemented; }	\
 
 
-inline size_t size(mpz_t n) {
+static inline size_t size(mpz_t n) {
 	return mpz_sizeinbase(n, 2);
 }
 
@@ -2419,9 +2419,6 @@ void initinteger(void) {
 #ifdef BENCHMARK_ENABLED
     if(import_benchmark() < 0)
     	CLEAN_EXIT;
-
-    if(PyType_Ready(&BenchmarkType) < 0)
-    	INITERROR;
 #endif
 
 	// initialize module

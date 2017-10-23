@@ -2146,10 +2146,6 @@ void initpairing(void) 		{
 #ifdef BENCHMARK_ENABLED
     if(import_benchmark() < 0)
         CLEAN_EXIT;
-    if(PyType_Ready(&BenchmarkType) < 0)
-        CLEAN_EXIT;
-    if(PyType_Ready(&OperationsType) < 0)
-    	CLEAN_EXIT;
 #endif
 
     struct module_state *st = GETSTATE(m);
